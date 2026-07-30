@@ -44,9 +44,9 @@
 
 실무 코드는 외주·사내 자산으로 비공개입니다 — 아래는 그 구조를 더미 데이터로 재현한 데모와 개인 풀스택 프로젝트입니다.
 
-**[sealo](https://github.com/EunhoRoh/sealo)** — 물범이 도장을 찍어주는 루틴 앱, Spring Boot 4.1/Java 21 + RN(Expo) 1인 풀스택
-- 핵심: N+1 예방 구조화 · 통합 테스트 29건
-- 상태: 진행 중 (MVP 코어~AI 플랜 완료)
+**[sealo](https://github.com/EunhoRoh/sealo)** — 물범이 도장을 쾅 찍어주는 루틴 앱, Spring Boot 4.1/Java 21 + RN(Expo) 1인 풀스택
+- 핵심: 알람→도장→조개 보상→물범 꾸미기 리텐션 루프 (iOS·Android·Web 단일 코드) · N+1 예방 구조화 · 통합 테스트 29건
+- 상태: 진행 중 (알람~AI 플랜·집중 모드까지 동작, 실기기 검증 단계)
 
 **[django-n-plus-one-lab](https://github.com/EunhoRoh/django-n-plus-one-lab)** — 실무 배치 OOM 장애를 더미 데이터로 재현한 N+1 실험실
 - 핵심: seed/bench 커맨드로 벤치 재측정 가능
@@ -56,9 +56,9 @@
 - 핵심: 문제→결정→근거 표 · 동기/비동기 실행 가능
 - 상태: 완성
 
-**[Itda](https://github.com/EunhoRoh/Itda)** — 심리학 RCT 연구 기반 관계 회복 앱, Spring Boot 4.1 + RN(Expo)
-- 핵심: 윤리 원칙을 서버 불변식으로 구현·테스트 검증
-- 상태: MVP (핵심 루프 구현 · 테스트 11건 통과)
+**[Itda](https://github.com/EunhoRoh/Itda)** — 끊어진 인연에 다시 연락할 용기를 주는 관계 회복 앱, Spring Boot 4.1 + RN(Expo)
+- 핵심: '오늘의 한 사람' 추천 → 추억 기록 → 4단계 재연락 미션 (심리학 RCT 연구 근거). 위험 관계는 서버가 미션 생성을 거부(409, 테스트 검증)
+- 상태: MVP (핵심 루프 구현 · 테스트 11건 통과 · AI 양측 개별 상담 중재는 설계 로드맵)
 
 ---
 
