@@ -1,68 +1,45 @@
-# 노은호 (ROH EUNHO)
+# 노은호
 
-**풀스택 개발자 · AI 서비스 통합 · QA 자동화** — 요구사항부터 DB·API·화면·서버까지 직접 만들고, 신규 사업 기획까지 맡아 봤습니다.
+백엔드 개발자입니다. 서비스를 직접 만들어 운영하고, 운영하다 생긴 문제는 원인까지 찾아 고칩니다.
 
-📧 deu04189@gmail.com · 🌐 [포트폴리오 원페이지](https://eunhoroh.github.io)
+- 포트폴리오: https://eunhoroh.github.io
+- 이메일: deu04189@gmail.com
 
----
+## 경력
 
-## 경력 — 테바소프트 SW팀 (2025.01 – 2026.10, 1년 10개월)
+**테바소프트 SW팀** (2025.01 ~ 2026.10, 1년 10개월)
 
-초등학생 정서 케어 서비스(사용자 수만 명)와 외주 개발을 하는 회사에서 풀스택 → QA 자동화 → 신규 사업 기획·구현 순으로 맡았습니다.
+초등학생 일기 서비스와 외주 시스템을 개발하는 회사에서 백엔드, 화면 개발, AI 기능 연동, QA 자동화를 맡았습니다.
 
-**Seamspace Family — 신규 사업 기획·프로토타입·운영 저장소 통합·부모앱 React 재구현 (2026.04–09)**
-- 기획 담당자가 따로 없어 리서치부터 맡았습니다. 해외 사례·국내 경쟁·법 규제를 조사하고 방향 후보 4안을 비교해 대표 보고서를 썼고, Django + Flutter 프로토타입으로 설계를 검증했습니다
-- 경영 결정으로 독립 앱이 기존 서비스의 확장으로 바뀌었을 때 코드가 아니라 검증된 설계를 옮겼습니다. 수만 줄 모놀리스에 `family` 앱을 격리 신설(모델만 로드하는 스텁으로 무거운 임포트 차단, 기존 코드 수정 초기 3줄), 자녀 계정 통합은 서버가 기존 응답에 값을 갈아끼우는 어댑터로 **앱 수정 0**
-- 일기 공개범위 3단계를 직렬화 단계에서 강제(비밀 글은 응답에 없음, 남의 것은 404), 부모가 자녀 공개범위를 대신 못 바꾸는 규칙을 회귀 테스트로 고정
-- 부모앱을 Flutter → React 18 + TypeScript로 **이틀 만에 전 화면 이식**(62파일 14,475줄 인벤토리 → 58파일 포팅). 제가 만든 가족톡방 2,200여 줄은 폐지하고 기존 기능 재사용
-- AI '오늘의 질문'(gpt-4o-mini): 11사례×2회 실측으로 프롬프트 3차 개선 — 안전 판정 2단계 JSON, 모델 호출 전 고위험 규칙 차단. family 테스트 111건
-- 대표·개발팀 확인용 사내 테스트 서버에 격리 스택으로 올리는 단계까지 진행(운영 배포 전)하고 인수인계
+- 사용자 3만 8천 명의 레벨 승급을 계산하다 멈추던 배치의 N+1 문제를 고쳐 DB 조회를 38,230회에서 5~6회로 줄였습니다.
+- 구글 로그인 장애를 30분 안에 알아내는 모니터링 봇을 Python과 Docker로 만들어 운영했습니다.
+- 협력 대학이 학습한 SLM 모델을 학생 일기 서비스에 HTTP API로 연동했습니다. 모델이 응답하지 않아도 위험한 일기를 놓치지 않게 설계했고, 누적 2,284건을 처리했습니다.
+- GPT로 부모용 대화 질문을 추천하는 기능에 출력 검증 단계를 넣어, 테스트한 위험 사례 5종을 모두 막았습니다.
+- 외주 건축물 하자 관리 시스템의 관리자 대시보드 화면(Vue.js, Nuxt.js)과 일부 집계 API를 개발했습니다.
+- 학생앱 테스트 케이스 1,511건 중 882건을 자동화했습니다.
 
-**Atrion — 건축물 품질관리 시스템 풀스택 (2025.06–12, 외주)**
-- 요구사항 → DB 스키마(테이블 약 35개) → API → 화면까지 단독. 대시보드 차트 34개, 슬로우쿼리 복합 인덱스, 루프 안 N+1을 GROUP BY로
-- PPT 보고서 자동화를 Celery 비동기로 분리해 실패율 30%→0%, 10초→3초. Azure Custom Vision으로 하자 사진 자동 분류
-- 구조 재현 데모: [pptx-report-pipeline-demo](https://github.com/EunhoRoh/pptx-report-pipeline-demo)
+## 개인 프로젝트
 
-**SLM 위기판정 통합 (정부 과제, DICIA·한서대 협력)**
-- 협력팀이 학습한 SLM(Qwen2-7B+LoRA)을 학생 일기 서비스 응급 파이프라인에 통합·상용 운영: 감정점수 1차 게이트 → 위험군만 HTTP 분류 → 실패 시 응급 간주(fail-safe) → 13개 언어 핫라인·교사 알림. 누적 2,284건(내부 집계)
-- 공인시험 검증 체계 설계: 정확도 산식, 한/영 라벨 동의어 판정 규칙, 재현 절차, SHA-256 고정. ※ 모델 학습·평가는 한서대
-- ChatGPT API 기반 AI 성격 챗봇 11종 운영(키 로테이션·aiohttp), 일기·채팅 프롬프트 관리
+**다시잇다** (2026.07 ~ 현재, 1인 개발과 운영, 저장소 비공개)
 
-**QA 자동화 — 학생앱 Flutter E2E·API 자동화 단독 구축 (2025.02–2026.09)**
-- TC 1,511건 워크북, 자동화 882건, 시나리오 49개, 15개 언어 회귀. 플레이키는 재시도가 아니라 구조로(데드라인 폴링, 실패 시 자가 복구)
-- 프로덕션 무수정으로 XHR을 가로채 request/response를 리포트에 첨부. API 러너(Node, 레시피 90종) 신설
-- 9월 한 달 결함 52건을 등급·재현 로그와 함께 기록, 보안·심각 5건 개발팀 전달. 팀원용 웹 테스트 러너 Seam Runner(Node·systemd·Cloudflare Access) 운영
+오래 연락이 끊긴 사람과의 관계를 다시 잇도록 돕는 앱입니다. Spring Boot 4.1과 Java 21로 REST API 194개를 만들었고, NCP 서버에 Docker Compose로 배포해 운영하고 있습니다. JWT 토큰 회전, 카카오와 구글 로그인 서버 검증, 테스트 310건과 GitHub Actions CI를 갖췄습니다. Claude Code로 개발하면서 작업 규칙 문서와 결정 기록으로 AI가 쓴 코드를 관리합니다.
 
-**운영·성능**
-- 헬스체크 이중 봇(1분·30분): 소셜 로그인 장애를 사용자 문의에서 **30분 내 자동 탐지**로, 비대칭 타임아웃 설계로 알림 폭주 30~60건→0
-- 38,230명 배치가 로그 없이 죽던 문제를 OOM 가설 → 코드 리뷰로 N+1 근본원인 발견 → 재설계 → 운영 배포(2026.07). 같은 패턴 재현: [django-n-plus-one-lab](https://github.com/EunhoRoh/django-n-plus-one-lab) — 쿼리 5,998→11회, 379초→0.24초(데모 실측)
+## 공개 저장소
 
----
+| 저장소 | 내용 |
+|---|---|
+| [sealo](https://github.com/EunhoRoh/sealo) | Spring Boot와 React Native로 만든 루틴 관리 앱 (REST API 24개, 통합 테스트 29건) |
+| [django-n-plus-one-lab](https://github.com/EunhoRoh/django-n-plus-one-lab) | 회사에서 겪은 배치 N+1 문제를 더미 데이터로 재현하고 측정한 저장소 |
 
-## 공개 레포
-
-실무 코드는 외주·사내 자산이라 비공개입니다. 아래는 개인 프로젝트와, 실무 문제의 구조를 더미 데이터로 재현한 데모입니다.
-
-| 레포 | 무엇 | 상태 |
-|---|---|---|
-| [sealo](https://github.com/EunhoRoh/sealo) | 물범이 알람으로 깨우고 도장을 찍어 주는 루틴 앱. Spring Boot 4.1 + React Native(Expo). N+1을 구조로 예방(핵심 화면 쿼리 2번), FCM 대신 로컬 알림, AI 플랜은 인터페이스 + 룰 엔진 | 2026.07 · API 24개 · 통합 테스트 29건 · 결정로그 27건 |
-| [django-n-plus-one-lab](https://github.com/EunhoRoh/django-n-plus-one-lab) | 실무 배치 OOM 장애를 재현한 N+1 실험실, seed/bench로 재측정 가능 | 완성 |
-| [pptx-report-pipeline-demo](https://github.com/EunhoRoh/pptx-report-pipeline-demo) | 차트 렌더링 → PPT 조립 → Celery 큐 파이프라인 | 완성 |
-
----
+회사 코드는 비공개라, 공개 저장소에는 실무에서 겪은 문제의 구조만 새로 재현했습니다.
 
 ## 기술
 
-| 구분 | 실무 (테바소프트) | 개인 프로젝트 |
-|---|---|---|
-| 언어 | Python, JavaScript/TypeScript, Dart, SQL | Java 21, TypeScript |
-| 백엔드 | Django REST Framework, Celery | Spring Boot 4.1, JPA, Spring Security |
-| 프론트·앱 | React 18 + TypeScript(Vite, TanStack Query), Vue 3, Nuxt, Flutter | React Native(Expo), TanStack Query |
-| AI | SLM 서비스 통합, OpenAI API 챗봇·프롬프트 설계, Azure Custom Vision | 생성기 인터페이스 + 룰 엔진(LLM 연결 전) |
-| QA·자동화 | Flutter integration_test, Node API 러너, Playwright, 헬스체크 봇 | Spring 통합 테스트(MockMvc) |
-| DB·인프라 | PostgreSQL, MySQL, Redis, Docker, Nginx, Cloudflare, systemd | PostgreSQL 16, Docker Compose |
+- 회사에서 쓴 기술: Python, Django REST Framework, Celery, PostgreSQL, MySQL, Redis, Vue.js, Nuxt.js, React, TypeScript, Flutter, Docker, Nginx, OpenAI API
+- 개인 프로젝트: Java 21, Spring Boot 4.1, JPA, Flyway, React Native, Docker Compose, Claude API, GitHub Actions
 
-연구: **KCC 2022 제1저자** — CNN-LSTM 심방세동 탐지(정확도 99.45%, AUC 0.99), 모델을 직접 설계·학습·평가. 캡스톤 우수상, 건국대 의료해커톤 결선.
-자격: 정보처리기사 · SQLD · OPIc IM2 · TOEIC 815. 한동대학교 AI·컴퓨터공학심화 학사, Vilnius University 교환학생.
+## 학력과 자격
 
-AI 페어 프로그래밍을 씁니다. 설계·검증·결정은 제가 하고 결정로그와 회귀 테스트로 남깁니다.
+- 한동대학교 AI·컴퓨터공학심화 졸업, Vilnius University 교환학생
+- 정보처리기사, SQLD, OPIc IM2, TOEIC 815
+- KCC 2022 제1저자 (CNN-LSTM 심방세동 탐지 모델, 정확도 99.45%)
